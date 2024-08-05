@@ -1,0 +1,3 @@
+python311 -m pip install virtualenv -- instalar entorno virtual
+python311 -m venv venv -- crear un entorno virtual 
+.\venv\Scripts\activate -- activar el entorno virtual
