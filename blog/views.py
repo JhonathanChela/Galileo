@@ -4,6 +4,9 @@ from django.http import HttpResponse, JsonResponse
 
 
 def index(request):
+    texto='Bienvenido'
     template = "index.html"
     print('Estoy en el metodo de invocacion index.html')
-    return render(request, template)
+    return render(request, template,{
+        'texto': texto
+    })

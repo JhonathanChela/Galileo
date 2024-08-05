@@ -9,11 +9,20 @@ def saludo(request, usuario):
     return HttpResponse("Hola: "+ usuario)
 
 def about(request):
-    return HttpResponse("About!")
+    template = 'about.html'
+    return render(request, template)
+    #return HttpResponse("About!")
 
 def projects(request):
-    projects = list(Project.objects.values())
-    return JsonResponse(projects, safe=False)
+    #projects = list(Project.objects.values())
+    #return JsonResponse(projects, safe=False)
+    projects = Project.objects.all()
+    template='project.html'
+    return render(request, template,{
+        'projects':projects
+    })
 
 def tasks(request):
-    return HttpResponse("tasks")
+    template='task.html'
+    return render(request, template)
+    #return HttpResponse("tasks")
