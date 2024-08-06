@@ -24,5 +24,7 @@ def projects(request):
 
 def tasks(request):
     template='task.html'
-    return render(request, template)
-    #return HttpResponse("tasks")
+    tasks = Task.objects.all()
+    return render(request, template,{
+        'tasks':tasks
+    })

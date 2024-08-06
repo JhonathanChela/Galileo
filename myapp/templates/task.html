@@ -10,5 +10,38 @@
 </head>
 <body>
     Task...
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Proyecto</th>
+            <th>Realizado</th>
+            <th>Acción</th>
+
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.project }}</td>
+                {% if task.done == True  %}
+                    <td>Terminado</td>
+                {% else %}
+                    <td>Pendiente</td>
+                {% endif %}
+                <td>
+                    <button>
+                        Update
+                    </button>
+                    <button>
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
 </body>
 </html>
